@@ -1,0 +1,242 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and background */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Header container styling */
+.header-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0 10px 0;
+    color: #000000;
+    text-align: left;
+    display: flex;
+    flex-direction: column; 
+    gap: 45px;
+}
+
+h1 {
+    font-size: 25px;
+    padding-bottom: 8px;
+    font-weight: 500;
+    color: #59687d;
+}
+
+/* Container styling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Heading */
+h2 {
+    font-size: 17px;
+    font-weight: 500;
+    color: #7689a3;
+}
+
+/* Form styling */
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* Labels */
+form label {
+    font-weight: 500;
+    color: #59687d;
+    font-size: 13px;
+}
+
+/* Inputs and textarea */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    color: #59687d;
+    border-radius: 6px;
+    font-size: 13px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+form textarea {
+    resize: vertical;
+    height: 110px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/* Submit button */
+form button {
+    padding: 12px;
+    background-color: #3b8eff;
+    color: #ffffff;
+    border: 1px solid #3b8eff;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
+    transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out; 
+}
+
+/* Button hover effect */
+form button:hover {
+    background-color: #ffffff;
+    color: #3b8eff;
+    border: 1px solid #3b8eff;
+}
+
+/* Success message */
+.success {
+    color: #28a745;
+    background: #e6f9ed;
+    padding: 12px;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Error message */
+.error {
+    color: #dc3545;
+    background: #fcebea;
+    padding: 12px;
+    border: 1px solid #dc3545;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Back link */
+.back-link {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.back-link a {
+    font-size: 13px;
+    color: #3b8eff;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+}
+
+.back-link a:hover {
+    color: #3b8eff;
+    border-bottom: 1px solid #3b8eff;
+}
+
+/* Submission details (Admin page) */
+.no-submission p {
+    font-size: 13px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.submissions-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.submissions-table th, .submissions-table td {
+    padding: 12px 12px 12px 0;
+    text-align: left;
+    font-size: 13px;
+    border: none;
+    vertical-align: top;
+    color: #59687d;
+}
+
+.submissions-table th {
+    font-weight: 700;
+    border-top: 1px solid #ffffff;
+}
+
+.submissions-table tr:nth-child(even) {
+    background-color: #f8fbff;
+}
+
+.submissions-table tr:hover {
+    background-color: #e9eff8;
+}
+
+.submissions-table tr {
+    border-top: 1px solid #ddd;
+}
+
+.submissions-table td:nth-child(1) { /* Name column */
+    width: 105px; /* Set a more reasonable width */
+    word-break: break-word; /* Ensure words break if necessary */
+}
+
+.submissions-table td:nth-child(2) { /* Email column */
+    width: 160px; /* Set a more reasonable width */
+    overflow-wrap: break-word; /* Allow wrapping of long email addresses */
+    word-break: break-word; /* Ensure words break if necessary */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.submissions-table td:nth-child(4) { /* Date column */
+    white-space: nowrap; /* Prevent wrapping for dates */
+    overflow: hidden; /* Hide overflow if content exceeds width */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+}
+
+@media (max-width: 768px) {
+    .submissions-table-container {
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+
+    .submissions-table {
+        width: 100%; /* Ensure the table takes full width */
+        min-width: 600px; /* Set a minimum width for the table */
+    }
+}
